@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>Clavier Virtuel</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <!-- <script src="js/index.js"></script> -->
 </head>
 <body>
     <header>
@@ -12,7 +12,164 @@
     </header>
 
     <main>
-        <p><input type="text" name="texte" id="texte" placeholder="Cliquez sur le clavier virtuel pour écrire" size="30"/></p>
+        <!-- <p><input type="text" name="texte" id="texte" placeholder="Cliquez sur le clavier virtuel pour écrire" size="30"/></p>-->
+            <button onclick="letterSpe('0')">1<br>&</button>
+            <button onclick="letterSpe('1')">2<br>é ~</button>
+            <button onclick="letterSpe('2')">3<br>" #</button>
+            <button onclick="letterSpe('3')">4<br>' {</button>
+            <button onclick="letterSpe('4')">5<br>( [</button>
+            <button onclick="letterSpe('5')">6<br>- |</button>
+            <button onclick="letterSpe('6')">7<br>è `</button>
+            <button onclick="letterSpe('7')">8<br>_ \</button>
+            <button onclick="letterSpe('8')">9<br>ç ^</button>
+            <button onclick="letterSpe('9')">0<br>à @</button>
+            <br>
+
+        <div>
+            <button id="letter" onclick="letter('a')">a</button>
+            <button id="letter" onclick="letter('z')">z</button>
+            <button onclick="letter('e')">e</button>
+            <button onclick="letter('r')">r</button>
+            <button onclick="letter('t')">t</button>
+            <button onclick="letter('y')">y</button>
+            <button onclick="letter('u')">u</button>
+            <button onclick="letter('i')">i</button>
+            <button onclick="letter('o')">o</button>
+            <button onclick="letter('p')">p</button>
+            <br>
+            <button onclick="letter('q')">Q</button>
+            <button onclick="letter('s')">S</button>
+            <button onclick="letter('d')">D</button>
+            <button onclick="letter('f')">F</button>
+            <button onclick="letter('g')">G</button>
+            <button onclick="letter('h')">H</button>
+            <button onclick="letter('j')">J</button>
+            <button onclick="letter('k')">K</button>
+            <button onclick="letter('l')">L</button>
+            <button onclick="letter('m')">M</button>
+            <br>
+            <button onclick="letter('w')">W</button>
+            <button onclick="letter('x')">X</button>
+            <button onclick="letter('c')">C</button>
+            <button onclick="letter('v')">V</button>
+            <button onclick="letter('b')">B</button>
+            <button onclick="letter('n')">N</button>
+        </div>
+
+        <br>
+        <button onclick="letter(' ')">ESPACE</button>
+        <br>
+        <br>
+        <button onclick="maj()">MAJ</button>
+        <button onclick="shift()">Shift</button>
+        <button onclick="alt()">ALT Gr</button>
+        <br>
+        <br>
+        <button onclick="back()">RETOUR</button>
+        <button onclick="erase()">EFFACER</button>
+
+        <p id="textZone"></p>
+
     </main>
+
+    <script>
+        let text = [];
+        let activeMaj = false;
+        let activeShift = false;
+        let activeAlt = false;
+
+        function letter(letter) {
+            if (activeMaj) {
+                document.getElementById("textZone").innerHTML += letter.toUpperCase();
+
+            } else if (activeShift) {
+                document.getElementById("textZone").innerHTML += letter.toUpperCase();
+                activeShift = false;
+                document.getElementById("letter").classList.remove("uppercase");
+            } else {
+                text += letter;
+                console.log(letter);
+
+                document.getElementById("textZone").innerHTML += letter;
+            };
+        }
+
+        function letterSpe(pos) {
+            const letterTab = [
+                ['&','1',''],
+                ['é','2','~'],
+                ['"','3','#'],
+                ["'",'4','{'],
+                ['(','5','['],
+                ['-','6','|'],
+                ['è','7','`'],
+                ['_','8','\\'],
+                ['ç','9','^'],
+                ['à','0','@']
+            ];
+
+            if (activeMaj) {
+                document.getElementById("textZone").innerHTML += letterTab[pos][1];
+
+            } else if (activeShift) {
+                document.getElementById("textZone").innerHTML += letterTab[pos][1];
+                activeShift = false;
+                document.getElementById("letter").classList.remove("uppercase");
+            } else if (activeAlt) {
+                document.getElementById("textZone").innerHTML += letterTab[pos][2];
+                activeAlt = false;
+            } else {
+                document.getElementById("textZone").innerHTML += letterTab[pos][0];
+            };
+        }
+
+        function maj() {
+            activeShift = false;
+            if (activeMaj) {
+                activeMaj = !activeMaj;
+                document.getElementById("letter").classList.remove("uppercase");
+            } else {
+                activeMaj = !activeMaj;
+                document.getElementById("letter").classList.add("uppercase");
+            }
+
+            console.log("MAJ : " + activeMaj);
+        }
+
+        function shift() {
+            if (activeMaj) {
+                alert("ATTENTION la touche MAJ est active!");
+            } else if (activeShift) {
+                activeShift = false;
+                document.getElementById("letter").classList.remove("uppercase");
+            } else {
+                activeShift = true;
+                document.getElementById("letter").classList.add("uppercase");
+            };
+
+            console.log("Shift : " + activeShift);
+        }
+
+        function alt() {
+            activeMaj = false;
+            activeShift = false;
+
+            if (activeAlt) {
+                activeAlt = false;
+            } else {
+                activeAlt = true;
+            };
+
+            console.log(activeAlt);
+        }
+
+        function back() {
+            document.getElementById("textZone").innerHTML = text.slice(text, -1);
+        }
+
+        function erase() {
+            document.getElementById("textZone").innerHTML = '';
+        }
+    </script>
 </body>
 </html>
