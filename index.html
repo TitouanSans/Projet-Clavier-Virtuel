@@ -60,9 +60,9 @@
         <button onclick="letter(' ')">ESPACE</button>
         <br>
         <br>
-        <button onclick="maj()">MAJ</button>
-        <button onclick="shift()">Shift</button>
-        <button onclick="alt()">ALT Gr</button>
+        <button id="maj" onclick="maj()">MAJ</button>
+        <button id="shift" onclick="shift()">Shift</button>
+        <button id="alt" onclick="alt()">ALT Gr</button>
         <br>
         <br>
         <button onclick="back()">RETOUR</button>
@@ -86,6 +86,7 @@
                 document.getElementById("textZone").innerHTML += letter.toUpperCase();
                 activeShift = false;
                 document.getElementById("letter").classList.remove("uppercase");
+                document.getElementById("shift").classList.remove("active");
             } else {
                 text += letter;
                 console.log(letter);
@@ -115,9 +116,12 @@
                 document.getElementById("textZone").innerHTML += letterTab[pos][1];
                 activeShift = false;
                 document.getElementById("letter").classList.remove("uppercase");
+                document.getElementById("shift").classList.remove("active");
             } else if (activeAlt) {
                 document.getElementById("textZone").innerHTML += letterTab[pos][2];
                 activeAlt = false;
+                document.getElementById("alt").classList.remove("active");
+
             } else {
                 document.getElementById("textZone").innerHTML += letterTab[pos][0];
             };
@@ -128,9 +132,11 @@
             if (activeMaj) {
                 activeMaj = !activeMaj;
                 document.getElementById("letter").classList.remove("uppercase");
+                document.getElementById("maj").classList.remove("active");
             } else {
                 activeMaj = !activeMaj;
                 document.getElementById("letter").classList.add("uppercase");
+                document.getElementById("maj").classList.add("active");
             }
 
             console.log("MAJ : " + activeMaj);
@@ -142,9 +148,11 @@
             } else if (activeShift) {
                 activeShift = false;
                 document.getElementById("letter").classList.remove("uppercase");
+                document.getElementById("shift").classList.remove("active");
             } else {
                 activeShift = true;
                 document.getElementById("letter").classList.add("uppercase");
+                document.getElementById("shift").classList.add("active");
             };
 
             console.log("Shift : " + activeShift);
@@ -156,8 +164,12 @@
 
             if (activeAlt) {
                 activeAlt = false;
+                document.getElementById("alt").classList.remove("active");
+
             } else {
                 activeAlt = true;
+                document.getElementById("alt").classList.add("active");
+
             };
 
             console.log(activeAlt);
