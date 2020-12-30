@@ -11,7 +11,7 @@
     </header>
 
     <main>
-        <div id="keyboard"></div>
+        <div id="keyboard">
         <!-- <p><input type="text" name="texte" id="texte" placeholder="Cliquez sur le clavier virtuel pour écrire" size="30"/></p> -->
             <button onclick="letterSpe('0')">1<br>&</button>
             <button onclick="letterSpe('1')">2<br>é ~</button>
@@ -24,20 +24,27 @@
             <button onclick="letterSpe('8')">9<br>ç ^</button>
             <button onclick="letterSpe('9')">0<br>à @</button>
             <br>
-
-        <div>
-            <button id="qwerty1" onclick="clickLetter('a')" class="letter">a</button>
-            <button id="qwerty2" onclick="clickLetter('z')" class="letter">z</button>
+        </div>
+        <div class="flex">
+            <div id="qwerty1">
+                <button onclick="clickLetter('a')" class="letter">a</button>
+            </div>
+            <div id="qwerty2">
+                <button onclick="clickLetter('z')" class="letter">z</button>
+            </div>
             <button onclick="clickLetter('e')" class="letter">e</button>
             <button onclick="clickLetter('r')" class="letter">r</button>
-            <button onclick="clickLetter('t')" class="lettera">t</button>
+            <button onclick="clickLetter('t')" class="letter">t</button>
             <button onclick="clickLetter('y')" class="letter">y</button>
             <button onclick="clickLetter('u')" class="letter">u</button>
             <button onclick="clickLetter('i')" class="letter">i</button>
             <button onclick="clickLetter('o')" class="letter">o</button>
             <button onclick="clickLetter('p')" class="letter">p</button>
-            <br>
-            <button id="qwerty3" onclick="clickLetter('q')" class="letter">q</button>
+        </div>
+        <div class="flex">
+            <div id="qwerty3" class="flex">
+                <button onclick="clickLetter('q')" class="letter">q</button>
+            </div>
             <button onclick="clickLetter('s')" class="letter">s</button>
             <button onclick="clickLetter('d')" class="letter">d</button>
             <button onclick="clickLetter('f')" class="letter">f</button>
@@ -47,8 +54,11 @@
             <button onclick="clickLetter('k')" class="letter">k</button>
             <button onclick="clickLetter('l')" class="letter">l</button>
             <button onclick="clickLetter('m')" class="letter">m</button>
-            <br>
-            <button id="qwerty4" onclick="clickLetter('w')" class="letter">w</button>
+        </div>
+        <div class="flex">
+            <div id="qwerty4">
+                <button onclick="clickLetter('w')" class="letter">w</button>
+            </div>
             <button onclick="clickLetter('x')" class="letter">x</button>
             <button onclick="clickLetter('c')" class="letter">c</button>
             <button onclick="clickLetter('v')" class="letter">v</button>

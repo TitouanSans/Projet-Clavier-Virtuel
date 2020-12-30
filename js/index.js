@@ -137,11 +137,16 @@ function qwertySwitch() {
 
     if (activeQwerty) {
         activeQwerty = false;
-        document.getElementById("qwertyBtn").innerHTML = 'AZERTY';
+        document.getElementById("qwertyBtn").innerHTML = 'AZERTY';  
+        document.getElementById("qwerty1").innerHTML = `<button id="qwerty1" onclick="clickLetter('a')" class="letter">a</button>`;
+        document.getElementById("qwerty2").innerHTML = `<button id="qwerty2" onclick="clickLetter('z')" class="letter">z</button>`;
+        document.getElementById("qwerty3").innerHTML = `<button id="qwerty3" onclick="clickLetter('q')" class="letter">q</button>`;
+        document.getElementById("qwerty4").innerHTML = `<button id="qwerty4" onclick="clickLetter('w')" class="letter">w</button>`;
+    
     } else {
         activeQwerty = true;
         document.getElementById("qwertyBtn").innerHTML = 'QWERTY';
-        document.getElementById("qwerty1").innerHTML = '9';
+        document.getElementById("qwerty1").innerHTML = `<button id="qwerty1" onclick="clickLetter('q')" class="letter">q</button>`;
         document.getElementById("qwerty2").innerHTML = `<button id="qwerty2" onclick="clickLetter('w')" class="letter">w</button>`;
         document.getElementById("qwerty3").innerHTML = `<button id="qwerty3" onclick="clickLetter('a')" class="letter">a</button>`;
         document.getElementById("qwerty4").innerHTML = `<button id="qwerty4" onclick="clickLetter('z')" class="letter">z</button>`;
