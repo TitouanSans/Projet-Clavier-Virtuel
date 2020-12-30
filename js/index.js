@@ -3,6 +3,7 @@ let text = [];
 let activeMaj = false;
 let activeShift = false;
 let activeAlt = false;
+let activeQwerty = false;
 
 let nb = document.querySelectorAll(".letter");
 
@@ -127,4 +128,22 @@ function back() {
 
 function erase() {
     document.getElementById("textZone").innerHTML = '';
+}
+
+function qwertySwitch() {
+    activeAlt = false;
+    activeMaj = false;
+    activeShift = false;
+
+    if (activeQwerty) {
+        activeQwerty = false;
+        document.getElementById("qwertyBtn").innerHTML = 'AZERTY';
+    } else {
+        activeQwerty = true;
+        document.getElementById("qwertyBtn").innerHTML = 'QWERTY';
+        document.getElementById("qwerty1").innerHTML = '9';
+        document.getElementById("qwerty2").innerHTML = `<button id="qwerty2" onclick="clickLetter('w')" class="letter">w</button>`;
+        document.getElementById("qwerty3").innerHTML = `<button id="qwerty3" onclick="clickLetter('a')" class="letter">a</button>`;
+        document.getElementById("qwerty4").innerHTML = `<button id="qwerty4" onclick="clickLetter('z')" class="letter">z</button>`;
+    }
 }
