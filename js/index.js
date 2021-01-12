@@ -138,6 +138,7 @@ function alt() {
 }
 
 function back() {
+    let text = document.getElementById("textZone").innerHTML;
     document.getElementById("textZone").innerHTML = text.slice(text, -1);
 }
 
