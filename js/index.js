@@ -5,7 +5,7 @@ let activeShift = false;
 let activeAlt = false;
 let activeQwerty = false;
 
-let nb = document.querySelectorAll(".letter");
+let nb = document.getElementsByClassName("letter");
 
 // for (let i = 0; i < 26; i++ ) {
 //     let newKey = document.createElement("button");
@@ -34,16 +34,16 @@ function clickLetter(letter) {
 
 function letterSpe(pos) {
     const letterTab = [
-        ['1','&',''],
-        ['2','é','~'],
-        ['3','"','#'],
-        ['4',"'",'{'],
-        ['5','(','['],
-        ['6','-','|'],
-        ['7','è','`'],
-        ['8','_','\\'],
-        ['9','ç','^'],
-        ['0','à','@']
+        ['&','1',''],
+        ['é','2','~'],
+        ['"','3','#'],
+        ["'",'4','{'],
+        ['(','5','['],
+        ['-','6','|'],
+        ['è','7','`'],
+        ['_','8','\\'],
+        ['ç','9','^'],
+        ['à','0','@']
     ];
 
     if (activeMaj) {
@@ -67,61 +67,74 @@ function letterSpe(pos) {
 }
 
 function maj() {
-    activeShift = false;
 
     if (activeMaj) {
-        activeMaj = !activeMaj;
         for (i = 0; i < nb.length; i++) {
             nb[i].classList.remove("uppercase");
         }
         document.getElementById("maj").classList.remove("active");
-    } else {
         activeMaj = !activeMaj;
-        document.getElementById("shift").classList.remove("active");
+    } else {
+        if (activeShift) {
+            shift();
+        }
+        if (activeAlt) {
+            alt();
+        }
+
+        document.getElementById("maj").classList.add("active");
         for (i = 0; i < nb.length; i++) {
             nb[i].classList.add("uppercase");
         }
-        document.getElementById("maj").classList.add("active");
+        activeMaj = !activeMaj;
     }
 
     console.log("MAJ : " + activeMaj);
 }
 
 function shift() {
-    if (activeMaj) {
-        alert("ATTENTION la touche MAJ est active!");
-    } else if (activeShift) {
-        activeShift = false;
+    if (activeShift) {
         for (i = 0; i < nb.length; i++) {
             nb[i].classList.remove("uppercase");
         }
         document.getElementById("shift").classList.remove("active");
+        activeShift = false;
     } else {
-        activeShift = true;
+        if (activeMaj) {
+            maj();
+        }
+        if (activeAlt) {
+            alt();
+        }
+
         for (i = 0; i < nb.length; i++) {
             nb[i].classList.add("uppercase");
         }
         document.getElementById("shift").classList.add("active");
+        activeShift = true;
     };
 
     console.log("Shift : " + activeShift);
 }
 
 function alt() {
-    activeMaj = false;
-    activeShift = false;
 
     if (activeAlt) {
-        activeAlt = false;
         document.getElementById("alt").classList.remove("active");
+        activeAlt = false;
 
     } else {
-        activeAlt = true;
+        if (activeMaj) {
+            maj();
+        }
+        if (activeShift) {
+            shift();
+        }
         document.getElementById("alt").classList.add("active");
-
+        activeAlt = true;
     };
 
-    console.log(activeAlt);
+    console.log("Alt : " + activeAlt);
 }
 
 function back() {
@@ -133,24 +146,37 @@ function erase() {
 }
 
 function qwertySwitch() {
-    activeAlt = false;
-    activeMaj = false;
-    activeShift = false;
 
     if (activeQwerty) {
-        activeQwerty = false;
-        document.getElementById("qwertyBtn").innerHTML = 'AZERTY';  
-        document.getElementById("qwerty1").innerHTML = `<button onclick="clickLetter('a')" class="letter">a</button>`;
-        document.getElementById("qwerty2").innerHTML = `<button onclick="clickLetter('z')" class="letter">z</button>`;
-        document.getElementById("qwerty3").innerHTML = `<button onclick="clickLetter('q')" class="letter">q</button>`;
-        document.getElementById("qwerty4").innerHTML = `<button onclick="clickLetter('w')" class="letter">w</button>`;
-    
-    } else {
+        if (activeMaj || activeShift) {
+            document.getElementById("qwertyBtn").innerHTML = 'AZERTY';  
+            document.getElementById("qwerty1").innerHTML = `<button onclick="clickLetter('a')" class="letter uppercase">a</button>`;
+            document.getElementById("qwerty2").innerHTML = `<button onclick="clickLetter('z')" class="letter uppercase">z</button>`;
+            document.getElementById("qwerty3").innerHTML = `<button onclick="clickLetter('q')" class="letter uppercase">q</button>`;
+            document.getElementById("qwerty4").innerHTML = `<button onclick="clickLetter('w')" class="letter uppercase">w</button>`;
+            activeQwerty = false;
+        } else {
+            document.getElementById("qwertyBtn").innerHTML = 'AZERTY';  
+            document.getElementById("qwerty1").innerHTML = `<button onclick="clickLetter('a')" class="letter">a</button>`;
+            document.getElementById("qwerty2").innerHTML = `<button onclick="clickLetter('z')" class="letter">z</button>`;
+            document.getElementById("qwerty3").innerHTML = `<button onclick="clickLetter('q')" class="letter">q</button>`;
+            document.getElementById("qwerty4").innerHTML = `<button onclick="clickLetter('w')" class="letter">w</button>`;
+            activeQwerty = false;
+        }
+
+    } else if (activeMaj || activeShift) {
+        document.getElementById("qwertyBtn").innerHTML = 'QWERTY';
+        document.getElementById("qwerty1").innerHTML = `<button onclick="clickLetter('q')" class="letter uppercase">q</button>`;
+        document.getElementById("qwerty2").innerHTML = `<button onclick="clickLetter('w')" class="letter uppercase">w</button>`;
+        document.getElementById("qwerty3").innerHTML = `<button onclick="clickLetter('a')" class="letter uppercase">a</button>`;
+        document.getElementById("qwerty4").innerHTML = `<button onclick="clickLetter('z')" class="letter uppercase">z</button>`;
         activeQwerty = true;
+    } else {
         document.getElementById("qwertyBtn").innerHTML = 'QWERTY';
         document.getElementById("qwerty1").innerHTML = `<button onclick="clickLetter('q')" class="letter">q</button>`;
         document.getElementById("qwerty2").innerHTML = `<button onclick="clickLetter('w')" class="letter">w</button>`;
         document.getElementById("qwerty3").innerHTML = `<button onclick="clickLetter('a')" class="letter">a</button>`;
         document.getElementById("qwerty4").innerHTML = `<button onclick="clickLetter('z')" class="letter">z</button>`;
+        activeQwerty = true;
     }
 }
