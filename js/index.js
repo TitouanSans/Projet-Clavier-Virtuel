@@ -147,6 +147,10 @@ function alt() {
     console.log("Alt : " + activeAlt);
 }
 
+function enter() {
+    document.getElementById("textZone").innerHTML += `<br>`;
+}
+
 function back() {
     let text = document.getElementById("textZone").innerHTML;
     document.getElementById("textZone").innerHTML = text.slice(text, -1);

@@ -26,7 +26,7 @@
             <button onclick="letterSpe('9')">0<br>à @</button>
             <button onclick="letterSpe('10')">°<br>) ]</button>
             <button onclick="letterSpe('11')">+<br>= }</button>
-            <br>
+            <button onclick="back()">RETOUR</button>
         </div>
 
         <div class="flex">
@@ -47,7 +47,10 @@
             <button onclick="clickLetter('p')" class="letter">p</button>
             <button onclick="letterSpe('12')">¨<br>^</button>
             <button onclick="letterSpe('13')">£<br>$ ¤</button>
+
+            <button id="enter" onclick="enter()">Entrée</button>
         </div>
+        
 
         <div class="flex">
             <button id="maj" onclick="maj()">MAJ</button>
@@ -81,6 +84,7 @@
             <button onclick="letterSpe('17')">.<br>;</button>
             <button onclick="letterSpe('18')">/<br>:</button>
             <button onclick="letterSpe('19')">§<br>!</button>
+            <button id="shift" onclick="shift()">Shift</button>
         </div>
 
         <div>
@@ -93,7 +97,6 @@
         <button id="qwertyBtn" onclick="qwertySwitch()">AZERTY</button>
         <br>
         <br>
-        <button onclick="back()">RETOUR</button>
         <button onclick="erase()">EFFACER</button>
 
         <p id="textZone"></p>
