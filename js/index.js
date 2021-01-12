@@ -7,6 +7,8 @@ let activeQwerty = false;
 
 let nb = document.getElementsByClassName("letter");
 
+let accentG = false;
+
 // for (let i = 0; i < 26; i++ ) {
 //     let newKey = document.createElement("button");
 //     let currentDiv = document.getElementById("keyboard");
@@ -67,13 +69,19 @@ function letterSpe(pos) {
         }
         document.getElementById("shift").classList.remove("active");
     } else if (activeAlt) {
-        document.getElementById("textZone").innerHTML += letterTab[pos][2];
-        activeAlt = false;
-        document.getElementById("alt").classList.remove("active");
+        if (pos === '6') {
+            accentG = true;
+            accentKeys();
+        } else {
+            document.getElementById("textZone").innerHTML += letterTab[pos][2];
+            activeAlt = false;
+            document.getElementById("alt").classList.remove("active");
+        }
 
     } else {
         document.getElementById("textZone").innerHTML += letterTab[pos][0];
     };
+
 }
 
 function maj() {
@@ -193,5 +201,13 @@ function qwertySwitch() {
         document.getElementById("qwerty3").innerHTML = `<button onclick="clickLetter('a')" class="letter">a</button>`;
         document.getElementById("qwerty4").innerHTML = `<button onclick="clickLetter('z')" class="letter">z</button>`;
         activeQwerty = true;
+    }
+}
+
+function accentKeys() {
+    if (accentG) {
+        document.getElementsByClassName("accentA")[0].innerHTML = `<button onclick="clickLetter('à')" class="letter">à</button>`;
+        document.getElementById("accentE").innerHTML = `<button onclick="clickLetter('è')" class="letter">è</button>`;
+        
     }
 }
