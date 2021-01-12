@@ -32,18 +32,18 @@ function clickLetter(letter) {
     };
 }
 
-function clickLetterSpe(pos) {
+function letterSpe(pos) {
     const letterTab = [
-        ['&','1',''],
-        ['é','2','~'],
-        ['"','3','#'],
-        ["'",'4','{'],
-        ['(','5','['],
-        ['-','6','|'],
-        ['è','7','`'],
-        ['_','8','\\'],
-        ['ç','9','^'],
-        ['à','0','@']
+        ['1','&',''],
+        ['2','é','~'],
+        ['3','"','#'],
+        ['4',"'",'{'],
+        ['5','(','['],
+        ['6','-','|'],
+        ['7','è','`'],
+        ['8','_','\\'],
+        ['9','ç','^'],
+        ['0','à','@']
     ];
 
     if (activeMaj) {
@@ -52,7 +52,9 @@ function clickLetterSpe(pos) {
     } else if (activeShift) {
         document.getElementById("textZone").innerHTML += letterTab[pos][1];
         activeShift = false;
-        document.getElementById("letter").classList.remove("uppercase");
+        for (i = 0; i < nb.length; i++) {
+            nb[i].classList.remove("uppercase");
+        }
         document.getElementById("shift").classList.remove("active");
     } else if (activeAlt) {
         document.getElementById("textZone").innerHTML += letterTab[pos][2];
@@ -138,17 +140,17 @@ function qwertySwitch() {
     if (activeQwerty) {
         activeQwerty = false;
         document.getElementById("qwertyBtn").innerHTML = 'AZERTY';  
-        document.getElementById("qwerty1").innerHTML = `<button id="qwerty1" onclick="clickLetter('a')" class="letter">a</button>`;
-        document.getElementById("qwerty2").innerHTML = `<button id="qwerty2" onclick="clickLetter('z')" class="letter">z</button>`;
-        document.getElementById("qwerty3").innerHTML = `<button id="qwerty3" onclick="clickLetter('q')" class="letter">q</button>`;
-        document.getElementById("qwerty4").innerHTML = `<button id="qwerty4" onclick="clickLetter('w')" class="letter">w</button>`;
+        document.getElementById("qwerty1").innerHTML = `<button onclick="clickLetter('a')" class="letter">a</button>`;
+        document.getElementById("qwerty2").innerHTML = `<button onclick="clickLetter('z')" class="letter">z</button>`;
+        document.getElementById("qwerty3").innerHTML = `<button onclick="clickLetter('q')" class="letter">q</button>`;
+        document.getElementById("qwerty4").innerHTML = `<button onclick="clickLetter('w')" class="letter">w</button>`;
     
     } else {
         activeQwerty = true;
         document.getElementById("qwertyBtn").innerHTML = 'QWERTY';
-        document.getElementById("qwerty1").innerHTML = `<button id="qwerty1" onclick="clickLetter('q')" class="letter">q</button>`;
-        document.getElementById("qwerty2").innerHTML = `<button id="qwerty2" onclick="clickLetter('w')" class="letter">w</button>`;
-        document.getElementById("qwerty3").innerHTML = `<button id="qwerty3" onclick="clickLetter('a')" class="letter">a</button>`;
-        document.getElementById("qwerty4").innerHTML = `<button id="qwerty4" onclick="clickLetter('z')" class="letter">z</button>`;
+        document.getElementById("qwerty1").innerHTML = `<button onclick="clickLetter('q')" class="letter">q</button>`;
+        document.getElementById("qwerty2").innerHTML = `<button onclick="clickLetter('w')" class="letter">w</button>`;
+        document.getElementById("qwerty3").innerHTML = `<button onclick="clickLetter('a')" class="letter">a</button>`;
+        document.getElementById("qwerty4").innerHTML = `<button onclick="clickLetter('z')" class="letter">z</button>`;
     }
 }
