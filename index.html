@@ -13,6 +13,7 @@
     <main>
         <div id="keyboard">
         <!-- <p><input type="text" name="texte" id="texte" placeholder="Cliquez sur le clavier virtuel pour écrire" size="30"/></p> -->
+            <button onclick="clickLetter('²')">²</button>
             <button onclick="letterSpe('0')">1<br>&</button>
             <button onclick="letterSpe('1')">2<br>é ~</button>
             <button onclick="letterSpe('2')">3<br>" #</button>
@@ -23,9 +24,13 @@
             <button onclick="letterSpe('7')">8<br>_ \</button>
             <button onclick="letterSpe('8')">9<br>ç ^</button>
             <button onclick="letterSpe('9')">0<br>à @</button>
+            <button onclick="letterSpe('10')">°<br>) ]</button>
+            <button onclick="letterSpe('11')">+<br>= }</button>
             <br>
         </div>
+
         <div class="flex">
+            <button id="tab" onclick="tab()">TAB</button>
             <div id="qwerty1">
                 <button onclick="clickLetter('a')" class="letter">a</button>
             </div>
@@ -40,9 +45,13 @@
             <button onclick="clickLetter('i')" class="letter">i</button>
             <button onclick="clickLetter('o')" class="letter">o</button>
             <button onclick="clickLetter('p')" class="letter">p</button>
+            <button onclick="letterSpe('12')">¨<br>^</button>
+            <button onclick="letterSpe('13')">£<br>$ ¤</button>
         </div>
+
         <div class="flex">
-            <div id="qwerty3" class="flex">
+            <button id="maj" onclick="maj()">MAJ</button>
+            <div id="qwerty3">
                 <button onclick="clickLetter('q')" class="letter">q</button>
             </div>
             <button onclick="clickLetter('s')" class="letter">s</button>
@@ -54,8 +63,12 @@
             <button onclick="clickLetter('k')" class="letter">k</button>
             <button onclick="clickLetter('l')" class="letter">l</button>
             <button onclick="clickLetter('m')" class="letter">m</button>
+            <button onclick="letterSpe('14')">%<br>ù</button>
+            <button onclick="letterSpe('15')">µ<br>*</button>
         </div>
+
         <div class="flex">
+            <button id="shift" onclick="shift()">Shift</button>
             <div id="qwerty4">
                 <button onclick="clickLetter('w')" class="letter">w</button>
             </div>
@@ -64,15 +77,19 @@
             <button onclick="clickLetter('v')" class="letter">v</button>
             <button onclick="clickLetter('b')" class="letter">b</button>
             <button onclick="clickLetter('n')" class="letter">n</button>
+            <button onclick="letterSpe('16')">?<br>,</button>
+            <button onclick="letterSpe('17')">.<br>;</button>
+            <button onclick="letterSpe('18')">/<br>:</button>
+            <button onclick="letterSpe('19')">§<br>!</button>
+        </div>
+
+        <div>
+            <button onclick="clickLetter(' ')">ESPACE</button>
+            <button id="alt" onclick="alt()">ALT Gr</button>
         </div>
 
         <br>
-        <button onclick="clickLetter(' ')">ESPACE</button>
         <br>
-        <br>
-        <button id="maj" onclick="maj()">MAJ</button>
-        <button id="shift" onclick="shift()">Shift</button>
-        <button id="alt" onclick="alt()">ALT Gr</button>
         <button id="qwertyBtn" onclick="qwertySwitch()">AZERTY</button>
         <br>
         <br>
