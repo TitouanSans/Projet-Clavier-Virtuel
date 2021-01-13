@@ -8,8 +8,55 @@
 }
 
 .letter {
+    width: 45px;
+    height: 45px;
+}
+
+.letter-spe {
+    width: 45px;
+    height: 45px;
+}
+
+.return-btn {
+    width: 90px;
+    height: 45px;
+}
+
+.tab-btn {
+    width: 65px;
+    height: 45px;
+}
+
+.enter-btn {
+
+}
+
+.maj-btn {
+    width: 80px;
+    height: 45px;
+}
+
+.shiftL {
+    width: 55px;
+    height: 45px;
+}
+
+.shiftR {
+    width: 120px;
+    height: 45px;
+}
+
+.space-btn {
+    width: 225px;
+    height: 45px;
+}
+
+.alt-btn {
+    width: 45px;
+    height: 45px;
 }
 
 .flex {
     display: flex;
+    flex-direction: row;
 }
