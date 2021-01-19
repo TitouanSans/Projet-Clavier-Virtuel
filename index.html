@@ -13,20 +13,20 @@
 
     <main>
         <div id="keyboard">
-            <button onclick="clickLetter('²')" class="letter-spe">² <br><br></button>
-            <button onclick="letterSpe('0')" class="letter-spe">1<br>&</button>
-            <button onclick="letterSpe('1')" class="letter-spe">2<br>é ~</button>
-            <button onclick="letterSpe('2')" class="letter-spe">3<br>" #</button>
-            <button onclick="letterSpe('3')" class="letter-spe">4<br>' {</button>
-            <button onclick="letterSpe('4')" class="letter-spe">5<br>( [</button>
-            <button onclick="letterSpe('5')" class="letter-spe">6<br>- |</button>
-            <button onclick="letterSpe('6')" class="letter-spe">7<br>è `</button>
-            <button onclick="letterSpe('7')" class="letter-spe">8<br>_ \</button>
-            <button onclick="letterSpe('8')" class="letter-spe">9<br>ç ^</button>
-            <button onclick="letterSpe('9')" class="letter-spe">0<br>à @</button>
-            <button onclick="letterSpe('10')" class="letter-spe">°<br>) ]</button>
-            <button onclick="letterSpe('11')" class="letter-spe">+<br>= }</button>
-            <button onclick="back()" class="return-btn"><br>RETOUR</button>
+            <button onclick="clickLetter('²')" class="letter-spe"><p class="solo">²</p></button>
+            <button onclick="letterSpe('0')" class="letter-spe"><p>1</p><p>&</p></button>
+            <button onclick="letterSpe('1')" class="letter-spe"><p>2</p><p>é ~</p></button>
+            <button onclick="letterSpe('2')" class="letter-spe"><p>3</p><p>" #</p></button>
+            <button onclick="letterSpe('3')" class="letter-spe"><p>4</p><p>' {</p></button>
+            <button onclick="letterSpe('4')" class="letter-spe"><p>5</p><p>( [</p></button>
+            <button onclick="letterSpe('5')" class="letter-spe"><p>6</p><p>- |</p></button>
+            <button onclick="letterSpe('6')" class="letter-spe"><p>7</p><p>è `</p></button>
+            <button onclick="letterSpe('7')" class="letter-spe"><p>8</p><p>_ \</p></button>
+            <button onclick="letterSpe('8')" class="letter-spe"><p>9</p><p>ç ^</p></button>
+            <button onclick="letterSpe('9')" class="letter-spe"><p>0</p><p>à @</p></button>
+            <button onclick="letterSpe('10')" class="letter-spe"><p>°</p><p>) ]</p></button>
+            <button onclick="letterSpe('11')" class="letter-spe"><p>+</p><p>= }</p></button>
+            <button onclick="back()" class="return-btn"><p class="solo">RETOUR</p></button>
         </div>
 
         <div class="flex">
@@ -53,8 +53,8 @@
                 <button onclick="clickLetter('o')" class="letter">o</button>
             </div>
             <button onclick="clickLetter('p')" class="letter">p</button>
-            <button onclick="letterSpe('12')" class="letter-spe">¨<br>^</button>
-            <button onclick="letterSpe('13')" class="letter-spe">£<br>$ ¤</button>
+            <button onclick="letterSpe('12')" class="letter-spe"><p>¨</p><p>^</p></button>
+            <button onclick="letterSpe('13')" class="letter-spe"><p>£</p><p>$ ¤</p></button>
 
             <button id="enter" onclick="enter()" class="enter-btn">Entrée</button>
         </div>
@@ -74,13 +74,13 @@
             <button onclick="clickLetter('k')" class="letter">k</button>
             <button onclick="clickLetter('l')" class="letter">l</button>
             <button onclick="clickLetter('m')" class="letter">m</button>
-            <button onclick="letterSpe('14')" class="letter-spe">%<br>ù</button>
-            <button onclick="letterSpe('15')" class="letter-spe">µ<br>*</button>
+            <button onclick="letterSpe('14')" class="letter-spe"><p>%</p><p>ù</p></button>
+            <button onclick="letterSpe('15')" class="letter-spe"><p>µ</p><p>*</p></button>
         </div>
 
         <div class="flex">
             <button id="shift" onclick="shift()" class="shiftL">Shift</button>
-            <button onclick="letterSpe('20')" class="letter-spe">&gt;<br>&lt;</button>
+            <button onclick="letterSpe('20')" class="letter-spe"><p>&gt;</p><p>&lt;</p></button>
             <div id="qwerty4">
                 <button onclick="clickLetter('w')" class="letter">w</button>
             </div>
@@ -89,16 +89,16 @@
             <button onclick="clickLetter('v')" class="letter">v</button>
             <button onclick="clickLetter('b')" class="letter">b</button>
             <button onclick="clickLetter('n')" class="letter">n</button>
-            <button onclick="letterSpe('16')" class="letter-spe">?<br>,</button>
-            <button onclick="letterSpe('17')" class="letter-spe">.<br>;</button>
-            <button onclick="letterSpe('18')" class="letter-spe">/<br>:</button>
-            <button onclick="letterSpe('19')" class="letter-spe">§<br>!</button>
+            <button onclick="letterSpe('16')" class="letter-spe"><p>?</p><p>,</p></button>
+            <button onclick="letterSpe('17')" class="letter-spe"><p>.</p><p>;</p></button>
+            <button onclick="letterSpe('18')" class="letter-spe"><p>/</p><p>:</p></button>
+            <button onclick="letterSpe('19')" class="letter-spe"><p>§</p><p>!</p></button>
             <button id="shift" onclick="shift()" class="shiftR">Shift</button>
         </div>
 
         <div>
-            <button id="alt" onclick="alt()" class="alt-btn">ALT Gr</button>
-            <button onclick="clickLetter(' ')" class="space-btn"><br>ESPACE</button>
+            <button id="alt" onclick="alt()" class="alt-btn"><p>ALT</p><p>GR</p></button>
+            <button onclick="clickLetter(' ')" class="space-btn"><p class="solo">ESPACE</p></button>
         </div>
 
         <button id="qwertyBtn" onclick="qwertySwitch()">AZERTY</button>
