@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(53, 53, 53);
+}
+
+button{
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    color: whitesmoke;
+}
+
+#textZone {
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+}

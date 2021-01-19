@@ -4,8 +4,10 @@ let activeMaj = false;
 let activeShift = false;
 let activeAlt = false;
 let activeQwerty = false;
+let activeNight = false;
 
 let nb = document.getElementsByClassName("letter");
+let btn = document.getElementsByTagName("button");
 
 let accentG = false;
 
@@ -18,6 +20,12 @@ let accentG = false;
 function clickLetter(letter) {
     if (activeMaj) {
         document.getElementById("textZone").innerHTML += letter.toUpperCase();
+        
+        document.getElementsByClassName("accentA")[0].innerHTML = `<button onclick="clickLetter('A')" class="letter">A</button>`;
+        document.getElementsByClassName("accentE")[0].innerHTML = `<button onclick="clickLetter('E')" class="letter">E</button>`;
+        document.getElementsByClassName("accentU")[0].innerHTML = `<button onclick="clickLetter('U')" class="letter">U</button>`;
+        document.getElementsByClassName("accentI")[0].innerHTML = `<button onclick="clickLetter('I')" class="letter">I</button>`;
+        document.getElementsByClassName("accentO")[0].innerHTML = `<button onclick="clickLetter('O')" class="letter">O</button>`;
 
     } else if (activeShift) {
         document.getElementById("textZone").innerHTML += letter.toUpperCase();
@@ -26,11 +34,23 @@ function clickLetter(letter) {
             nb[i].classList.remove("uppercase");
         }
         document.getElementById("shift").classList.remove("active");
+
+        document.getElementsByClassName("accentA")[0].innerHTML = `<button onclick="clickLetter('a')" class="letter">a</button>`;
+        document.getElementsByClassName("accentE")[0].innerHTML = `<button onclick="clickLetter('e')" class="letter">e</button>`;
+        document.getElementsByClassName("accentU")[0].innerHTML = `<button onclick="clickLetter('u')" class="letter">u</button>`;
+        document.getElementsByClassName("accentI")[0].innerHTML = `<button onclick="clickLetter('i')" class="letter">i</button>`;
+        document.getElementsByClassName("accentO")[0].innerHTML = `<button onclick="clickLetter('o')" class="letter">o</button>`;
     } else {
         text += letter;
         console.log(letter);
 
         document.getElementById("textZone").innerHTML += letter;
+
+        document.getElementsByClassName("accentA")[0].innerHTML = `<button onclick="clickLetter('a')" class="letter">a</button>`;
+        document.getElementsByClassName("accentE")[0].innerHTML = `<button onclick="clickLetter('e')" class="letter">e</button>`;
+        document.getElementsByClassName("accentU")[0].innerHTML = `<button onclick="clickLetter('u')" class="letter">u</button>`;
+        document.getElementsByClassName("accentI")[0].innerHTML = `<button onclick="clickLetter('i')" class="letter">i</button>`;
+        document.getElementsByClassName("accentO")[0].innerHTML = `<button onclick="clickLetter('o')" class="letter">o</button>`;
     };
 }
 
@@ -207,7 +227,23 @@ function qwertySwitch() {
 function accentKeys() {
     if (accentG) {
         document.getElementsByClassName("accentA")[0].innerHTML = `<button onclick="clickLetter('à')" class="letter">à</button>`;
-        document.getElementById("accentE").innerHTML = `<button onclick="clickLetter('è')" class="letter">è</button>`;
-        
+        document.getElementsByClassName("accentE")[0].innerHTML = `<button onclick="clickLetter('è')" class="letter">è</button>`;
+        document.getElementsByClassName("accentU")[0].innerHTML = `<button onclick="clickLetter('ù')" class="letter">ù</button>`;
+        document.getElementsByClassName("accentI")[0].innerHTML = `<button onclick="clickLetter('ì')" class="letter">ì</button>`;
+        document.getElementsByClassName("accentO")[0].innerHTML = `<button onclick="clickLetter('ò')" class="letter">ò</button>`;
+        accentG = false;
+        alt();  
+    }
+}
+
+function night() {
+    if (activeNight) {
+        document.getElementById("mod").href = "css/day.css"
+        document.getElementById("nightBtn").innerHTML = 'JOUR';  
+        activeNight = false;
+    } else {
+        document.getElementById("mod").href = "css/night.css"        
+        document.getElementById("nightBtn").innerHTML = 'NUIT';  
+        activeNight = true;
     }
 }

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Clavier Virtuel</title>
     <link rel="stylesheet" href="css/index.css">
+    <link id="mod" rel="stylesheet" href="css/day.css">
 </head>
 <body>
     <header>
@@ -12,8 +13,7 @@
 
     <main>
         <div id="keyboard">
-        <!-- <p><input type="text" name="texte" id="texte" placeholder="Cliquez sur le clavier virtuel pour écrire" size="30"/></p> -->
-            <button onclick="clickLetter('²')" class="letter-spe">²</button>
+            <button onclick="clickLetter('²')" class="letter-spe">² <br><br></button>
             <button onclick="letterSpe('0')" class="letter-spe">1<br>&</button>
             <button onclick="letterSpe('1')" class="letter-spe">2<br>é ~</button>
             <button onclick="letterSpe('2')" class="letter-spe">3<br>" #</button>
@@ -26,7 +26,7 @@
             <button onclick="letterSpe('9')" class="letter-spe">0<br>à @</button>
             <button onclick="letterSpe('10')" class="letter-spe">°<br>) ]</button>
             <button onclick="letterSpe('11')" class="letter-spe">+<br>= }</button>
-            <button onclick="back()" class="return-btn">RETOUR</button>
+            <button onclick="back()" class="return-btn"><br>RETOUR</button>
         </div>
 
         <div class="flex">
@@ -37,15 +37,21 @@
             <div id="qwerty2">
                 <button onclick="clickLetter('z')" class="letter">z</button>
             </div>
-            <div id="accentE">
+            <div class="accentE">
                 <button onclick="clickLetter('e')" class="letter">e</button>
             </div>
             <button onclick="clickLetter('r')" class="letter">r</button>
             <button onclick="clickLetter('t')" class="letter">t</button>
             <button onclick="clickLetter('y')" class="letter">y</button>
-            <button onclick="clickLetter('u')" class="letter">u</button>
-            <button onclick="clickLetter('i')" class="letter">i</button>
-            <button onclick="clickLetter('o')" class="letter">o</button>
+            <div class="accentU">
+                <button onclick="clickLetter('u')" class="letter accentU">u</button>
+            </div>
+            <div class="accentI">
+                <button onclick="clickLetter('i')" class="letter">i</button>
+            </div>
+            <div class="accentO">
+                <button onclick="clickLetter('o')" class="letter">o</button>
+            </div>
             <button onclick="clickLetter('p')" class="letter">p</button>
             <button onclick="letterSpe('12')" class="letter-spe">¨<br>^</button>
             <button onclick="letterSpe('13')" class="letter-spe">£<br>$ ¤</button>
@@ -91,16 +97,13 @@
         </div>
 
         <div>
-            <button onclick="clickLetter(' ')" class="space-btn">ESPACE</button>
             <button id="alt" onclick="alt()" class="alt-btn">ALT Gr</button>
+            <button onclick="clickLetter(' ')" class="space-btn"><br>ESPACE</button>
         </div>
 
-        <br>
-        <br>
         <button id="qwertyBtn" onclick="qwertySwitch()">AZERTY</button>
-        <br>
-        <br>
         <button onclick="erase()">EFFACER</button>
+        <button id="nightBtn" onclick="night()">JOUR</button>
 
         <p id="textZone"></p>
 
