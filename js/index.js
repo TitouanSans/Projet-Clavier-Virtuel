@@ -9,7 +9,9 @@ let activeNight = false;
 let nb = document.getElementsByClassName("letter");
 let btn = document.getElementsByTagName("button");
 
-let accentG = false;
+let accentGra = false;
+let accentCir = false;
+let accentUm = false;
 
 // for (let i = 0; i < 26; i++ ) {
 //     let newKey = document.createElement("button");
@@ -21,11 +23,11 @@ function clickLetter(letter) {
     if (activeMaj) {
         document.getElementById("textZone").innerHTML += letter.toUpperCase();
         
-        document.getElementsByClassName("accentA")[0].innerHTML = `<button onclick="clickLetter('A')" class="letter">A</button>`;
-        document.getElementsByClassName("accentE")[0].innerHTML = `<button onclick="clickLetter('E')" class="letter">E</button>`;
-        document.getElementsByClassName("accentU")[0].innerHTML = `<button onclick="clickLetter('U')" class="letter">U</button>`;
-        document.getElementsByClassName("accentI")[0].innerHTML = `<button onclick="clickLetter('I')" class="letter">I</button>`;
-        document.getElementsByClassName("accentO")[0].innerHTML = `<button onclick="clickLetter('O')" class="letter">O</button>`;
+        document.getElementsByClassName("accentA")[0].innerHTML = `<button onclick="clickLetter('A')" class="letter uppercase">a</button>`;
+        document.getElementsByClassName("accentE")[0].innerHTML = `<button onclick="clickLetter('E')" class="letter uppercase">e</button>`;
+        document.getElementsByClassName("accentU")[0].innerHTML = `<button onclick="clickLetter('U')" class="letter uppercase">u</button>`;
+        document.getElementsByClassName("accentI")[0].innerHTML = `<button onclick="clickLetter('I')" class="letter uppercase">i</button>`;
+        document.getElementsByClassName("accentO")[0].innerHTML = `<button onclick="clickLetter('O')" class="letter uppercase">o</button>`;
 
     } else if (activeShift) {
         document.getElementById("textZone").innerHTML += letter.toUpperCase();
@@ -79,24 +81,38 @@ function letterSpe(pos) {
     ];
 
     if (activeMaj) {
-        document.getElementById("textZone").innerHTML += letterTab[pos][1];
+        if (pos === '12') {
+            accentUm = true;
+            accentKeys();
+        } else {
+            document.getElementById("textZone").innerHTML += letterTab[pos][1];
+        }
 
     } else if (activeShift) {
-        document.getElementById("textZone").innerHTML += letterTab[pos][1];
-        activeShift = false;
-        for (i = 0; i < nb.length; i++) {
-            nb[i].classList.remove("uppercase");
+        if (pos === '12') {
+            accentUm = true;
+            accentKeys();
+        } else {
+            document.getElementById("textZone").innerHTML += letterTab[pos][1];
+            activeShift = false;
+            for (i = 0; i < nb.length; i++) {
+                nb[i].classList.remove("uppercase");
+            }
+            document.getElementById("shift").classList.remove("active");
         }
-        document.getElementById("shift").classList.remove("active");
     } else if (activeAlt) {
         if (pos === '6') {
-            accentG = true;
+            accentGra = true;
             accentKeys();
         } else {
             document.getElementById("textZone").innerHTML += letterTab[pos][2];
             activeAlt = false;
             document.getElementById("alt").classList.remove("active");
         }
+
+    } else if (pos === '12') {
+        accentCir = true;
+        accentKeys();
 
     } else {
         document.getElementById("textZone").innerHTML += letterTab[pos][0];
@@ -225,14 +241,42 @@ function qwertySwitch() {
 }
 
 function accentKeys() {
-    if (accentG) {
+    if (accentGra) {
         document.getElementsByClassName("accentA")[0].innerHTML = `<button onclick="clickLetter('à')" class="letter">à</button>`;
         document.getElementsByClassName("accentE")[0].innerHTML = `<button onclick="clickLetter('è')" class="letter">è</button>`;
         document.getElementsByClassName("accentU")[0].innerHTML = `<button onclick="clickLetter('ù')" class="letter">ù</button>`;
         document.getElementsByClassName("accentI")[0].innerHTML = `<button onclick="clickLetter('ì')" class="letter">ì</button>`;
         document.getElementsByClassName("accentO")[0].innerHTML = `<button onclick="clickLetter('ò')" class="letter">ò</button>`;
-        accentG = false;
+        accentGra = false;
         alt();  
+    } 
+    if (accentCir) {
+        document.getElementsByClassName("accentA")[0].innerHTML = `<button onclick="clickLetter('â')" class="letter">â</button>`;
+        document.getElementsByClassName("accentE")[0].innerHTML = `<button onclick="clickLetter('ê')" class="letter">ê</button>`;
+        document.getElementsByClassName("accentU")[0].innerHTML = `<button onclick="clickLetter('û')" class="letter">û</button>`;
+        document.getElementsByClassName("accentI")[0].innerHTML = `<button onclick="clickLetter('î')" class="letter">î</button>`;
+        document.getElementsByClassName("accentO")[0].innerHTML = `<button onclick="clickLetter('ô')" class="letter">ô</button>`;
+        accentCir = false;
+    }
+    if (accentUm) {
+        if (activeMaj) {
+            document.getElementsByClassName("accentA")[0].innerHTML = `<button onclick="clickLetter('Ä')" class="letter uppercase">Ä</button>`;
+            document.getElementsByClassName("accentE")[0].innerHTML = `<button onclick="clickLetter('Ë')" class="letter uppercase">Ë</button>`;
+            document.getElementsByClassName("accentU")[0].innerHTML = `<button onclick="clickLetter('Ü')" class="letter uppercase">Ü</button>`;
+            document.getElementsByClassName("accentI")[0].innerHTML = `<button onclick="clickLetter('Ï')" class="letter uppercase">Ï</button>`;
+            document.getElementsByClassName("accentO")[0].innerHTML = `<button onclick="clickLetter('Ö')" class="letter uppercase">Ö</button>`;
+            accentUm = false;
+        } else {
+            document.getElementsByClassName("accentA")[0].innerHTML = `<button onclick="clickLetter('ä')" class="letter">ä</button>`;
+            document.getElementsByClassName("accentE")[0].innerHTML = `<button onclick="clickLetter('ë')" class="letter">ë</button>`;
+            document.getElementsByClassName("accentU")[0].innerHTML = `<button onclick="clickLetter('ü')" class="letter">ü</button>`;
+            document.getElementsByClassName("accentI")[0].innerHTML = `<button onclick="clickLetter('ï')" class="letter">ï</button>`;
+            document.getElementsByClassName("accentO")[0].innerHTML = `<button onclick="clickLetter('ö')" class="letter">ö</button>`;
+            accentUm = false;
+            if (activeShift) {
+                shift();
+            }
+        }
     }
 }
 
