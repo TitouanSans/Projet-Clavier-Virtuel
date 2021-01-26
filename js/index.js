@@ -194,6 +194,20 @@ function alt() {
 function enter() {
     document.getElementById("textZone").innerHTML += `<br>`;
 }
+document.getElementById("enter").onmouseover = function() {mouseOver()};
+document.getElementById("enter").onmouseout = function() {mouseOut()};
+document.getElementById("enter2").onmouseover = function() {mouseOver()};
+document.getElementById("enter2").onmouseout = function() {mouseOut()};
+
+function mouseOver() {
+  document.getElementById("enter").classList.add("hover");
+  document.getElementById("enter2").classList.add("hover");
+}
+function mouseOut() {
+  document.getElementById("enter").classList.remove("hover");
+  document.getElementById("enter2").classList.remove("hover");
+}
+
 
 function back() {
     let text = document.getElementById("textZone").innerHTML;

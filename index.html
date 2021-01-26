@@ -11,102 +11,105 @@
         <h1>Clavier Virtuel</h1>
     </header>
 
-    <main>
-        <div id="keyboard" class="flex">
-            <button onclick="clickLetter('²')" class="letter-spe">²</button>
-            <button onclick="letterSpe('0')" class="letter-spe"><p>1</p><p>&</p></button>
-            <button onclick="letterSpe('1')" class="letter-spe"><p>2</p><p>é ~</p></button>
-            <button onclick="letterSpe('2')" class="letter-spe"><p>3</p><p>" #</p></button>
-            <button onclick="letterSpe('3')" class="letter-spe"><p>4</p><p>' {</p></button>
-            <button onclick="letterSpe('4')" class="letter-spe"><p>5</p><p>( [</p></button>
-            <button onclick="letterSpe('5')" class="letter-spe"><p>6</p><p>- |</p></button>
-            <button onclick="letterSpe('6')" class="letter-spe"><p>7</p><p>è `</p></button>
-            <button onclick="letterSpe('7')" class="letter-spe"><p>8</p><p>_ \</p></button>
-            <button onclick="letterSpe('8')" class="letter-spe"><p>9</p><p>ç ^</p></button>
-            <button onclick="letterSpe('9')" class="letter-spe"><p>0</p><p>à @</p></button>
-            <button onclick="letterSpe('10')" class="letter-spe"><p>°</p><p>) ]</p></button>
-            <button onclick="letterSpe('11')" class="letter-spe"><p>+</p><p>= }</p></button>
-            <button onclick="back()" class="return-btn">RETOUR</button>
-        </div>
-
-        <div class="flex">
-            <button id="tab" onclick="tab()" class="tab-btn">TAB</button>
-            <div id="qwerty1" class="accentA">
-                <button onclick="clickLetter('a')" class="letter">a</button>
-            </div>
-            <div id="qwerty2">
-                <button onclick="clickLetter('z')" class="letter">z</button>
-            </div>
-            <div class="accentE">
-                <button onclick="clickLetter('e')" class="letter">e</button>
-            </div>
-            <button onclick="clickLetter('r')" class="letter">r</button>
-            <button onclick="clickLetter('t')" class="letter">t</button>
-            <button onclick="clickLetter('y')" class="letter">y</button>
-            <div class="accentU">
-                <button onclick="clickLetter('u')" class="letter accentU">u</button>
-            </div>
-            <div class="accentI">
-                <button onclick="clickLetter('i')" class="letter">i</button>
-            </div>
-            <div class="accentO">
-                <button onclick="clickLetter('o')" class="letter">o</button>
-            </div>
-            <button onclick="clickLetter('p')" class="letter">p</button>
-            <button onclick="letterSpe('12')" class="letter-spe"><p>¨</p><p>^</p></button>
-            <button onclick="letterSpe('13')" class="letter-spe"><p>£</p><p>$ ¤</p></button>
-
-            <button id="enter" onclick="enter()" class="enter-btn">Entrée</button>
-        </div>
-        
-
-        <div class="flex">
-            <button id="maj" onclick="maj()" class="maj-btn">MAJ</button>
-            <div id="qwerty3">
-                <button onclick="clickLetter('q')" class="letter">q</button>
-            </div>
-            <button onclick="clickLetter('s')" class="letter">s</button>
-            <button onclick="clickLetter('d')" class="letter">d</button>
-            <button onclick="clickLetter('f')" class="letter">f</button>
-            <button onclick="clickLetter('g')" class="letter">g</button>
-            <button onclick="clickLetter('h')" class="letter">h</button>
-            <button onclick="clickLetter('j')" class="letter">j</button>
-            <button onclick="clickLetter('k')" class="letter">k</button>
-            <button onclick="clickLetter('l')" class="letter">l</button>
-            <button onclick="clickLetter('m')" class="letter">m</button>
-            <button onclick="letterSpe('14')" class="letter-spe"><p>%</p><p>ù</p></button>
-            <button onclick="letterSpe('15')" class="letter-spe"><p>µ</p><p>*</p></button>
-            <button id="enter" onclick="enter()" class="enter-btn2"></button>
-        </div>
-
-        <div class="flex">
-            <button id="shift" onclick="shift()" class="shiftL">Shift</button>
-            <button onclick="letterSpe('20')" class="letter-spe"><p>&gt;</p><p>&lt;</p></button>
-            <div id="qwerty4">
-                <button onclick="clickLetter('w')" class="letter">w</button>
-            </div>
-            <button onclick="clickLetter('x')" class="letter">x</button>
-            <button onclick="clickLetter('c')" class="letter">c</button>
-            <button onclick="clickLetter('v')" class="letter">v</button>
-            <button onclick="clickLetter('b')" class="letter">b</button>
-            <button onclick="clickLetter('n')" class="letter">n</button>
-            <button onclick="letterSpe('16')" class="letter-spe"><p>?</p><p>,</p></button>
-            <button onclick="letterSpe('17')" class="letter-spe"><p>.</p><p>;</p></button>
-            <button onclick="letterSpe('18')" class="letter-spe"><p>/</p><p>:</p></button>
-            <button onclick="letterSpe('19')" class="letter-spe"><p>§</p><p>!</p></button>
-            <button id="shift" onclick="shift()" class="shiftR">Shift</button>
-        </div>
-
-        <div class="flex">
-            <button id="alt" onclick="alt()" class="alt-btn"><p>Alt Gr</p></button>
-            <button onclick="clickLetter(' ')" class="space-btn">ESPACE</button>
-        </div>
-
-        <button id="qwertyBtn" onclick="qwertySwitch()">AZERTY</button>
-        <button onclick="erase()">EFFACER</button>
-        <button id="nightBtn" onclick="night()">JOUR</button>
+    <main> 
 
         <p id="textZone"></p>
+
+        <div id="keyboard">
+            <div class="flex">
+                <button onclick="clickLetter('²')" class="letter-spe">²</button>
+                <button onclick="letterSpe('0')" class="letter-spe"><p>1</p><p>&</p></button>
+                <button onclick="letterSpe('1')" class="letter-spe"><p>2</p><p>é ~</p></button>
+                <button onclick="letterSpe('2')" class="letter-spe"><p>3</p><p>" #</p></button>
+                <button onclick="letterSpe('3')" class="letter-spe"><p>4</p><p>' {</p></button>
+                <button onclick="letterSpe('4')" class="letter-spe"><p>5</p><p>( [</p></button>
+                <button onclick="letterSpe('5')" class="letter-spe"><p>6</p><p>- |</p></button>
+                <button onclick="letterSpe('6')" class="letter-spe"><p>7</p><p>è `</p></button>
+                <button onclick="letterSpe('7')" class="letter-spe"><p>8</p><p>_ \</p></button>
+                <button onclick="letterSpe('8')" class="letter-spe"><p>9</p><p>ç ^</p></button>
+                <button onclick="letterSpe('9')" class="letter-spe"><p>0</p><p>à @</p></button>
+                <button onclick="letterSpe('10')" class="letter-spe"><p>°</p><p>) ]</p></button>
+                <button onclick="letterSpe('11')" class="letter-spe"><p>+</p><p>= }</p></button>
+                <button onclick="back()" class="return-btn">RETOUR</button>
+            </div>
+
+            <div class="flex">
+                <button id="tab" onclick="tab()" class="tab-btn">TAB</button>
+                <div id="qwerty1" class="accentA">
+                    <button onclick="clickLetter('a')" class="letter">a</button>
+                </div>
+                <div id="qwerty2">
+                    <button onclick="clickLetter('z')" class="letter">z</button>
+                </div>
+                <div class="accentE">
+                    <button onclick="clickLetter('e')" class="letter">e</button>
+                </div>
+                <button onclick="clickLetter('r')" class="letter">r</button>
+                <button onclick="clickLetter('t')" class="letter">t</button>
+                <button onclick="clickLetter('y')" class="letter">y</button>
+                <div class="accentU">
+                    <button onclick="clickLetter('u')" class="letter accentU">u</button>
+                </div>
+                <div class="accentI">
+                    <button onclick="clickLetter('i')" class="letter">i</button>
+                </div>
+                <div class="accentO">
+                    <button onclick="clickLetter('o')" class="letter">o</button>
+                </div>
+                <button onclick="clickLetter('p')" class="letter">p</button>
+                <button onclick="letterSpe('12')" class="letter-spe"><p>¨</p><p>^</p></button>
+                <button onclick="letterSpe('13')" class="letter-spe"><p>£</p><p>$ ¤</p></button>
+
+                <button id="enter" onclick="enter()" class="enter-btn">Entrée</button>
+            </div>
+            
+
+            <div class="flex">
+                <button id="maj" onclick="maj()" class="maj-btn">MAJ</button>
+                <div id="qwerty3">
+                    <button onclick="clickLetter('q')" class="letter">q</button>
+                </div>
+                <button onclick="clickLetter('s')" class="letter">s</button>
+                <button onclick="clickLetter('d')" class="letter">d</button>
+                <button onclick="clickLetter('f')" class="letter">f</button>
+                <button onclick="clickLetter('g')" class="letter">g</button>
+                <button onclick="clickLetter('h')" class="letter">h</button>
+                <button onclick="clickLetter('j')" class="letter">j</button>
+                <button onclick="clickLetter('k')" class="letter">k</button>
+                <button onclick="clickLetter('l')" class="letter">l</button>
+                <button onclick="clickLetter('m')" class="letter">m</button>
+                <button onclick="letterSpe('14')" class="letter-spe"><p>%</p><p>ù</p></button>
+                <button onclick="letterSpe('15')" class="letter-spe"><p>µ</p><p>*</p></button>
+                <button id="enter2" onclick="enter()" class="enter-btn2"></button>
+            </div>
+
+            <div class="flex">
+                <button id="shift" onclick="shift()" class="shiftL">Shift</button>
+                <button onclick="letterSpe('20')" class="letter-spe"><p>&gt;</p><p>&lt;</p></button>
+                <div id="qwerty4">
+                    <button onclick="clickLetter('w')" class="letter">w</button>
+                </div>
+                <button onclick="clickLetter('x')" class="letter">x</button>
+                <button onclick="clickLetter('c')" class="letter">c</button>
+                <button onclick="clickLetter('v')" class="letter">v</button>
+                <button onclick="clickLetter('b')" class="letter">b</button>
+                <button onclick="clickLetter('n')" class="letter">n</button>
+                <button onclick="letterSpe('16')" class="letter-spe"><p>?</p><p>,</p></button>
+                <button onclick="letterSpe('17')" class="letter-spe"><p>.</p><p>;</p></button>
+                <button onclick="letterSpe('18')" class="letter-spe"><p>/</p><p>:</p></button>
+                <button onclick="letterSpe('19')" class="letter-spe"><p>§</p><p>!</p></button>
+                <button id="shift" onclick="shift()" class="shiftR">Shift</button>
+            </div>
+
+            <div class="flex">
+                <button id="alt" onclick="alt()" class="alt-btn"><p>Alt Gr</p></button>
+                <button onclick="clickLetter(' ')" class="space-btn">ESPACE</button>
+            </div>
+
+            <button id="qwertyBtn" onclick="qwertySwitch()">AZERTY</button>
+            <button onclick="erase()">EFFACER</button>
+            <button id="nightBtn" onclick="night()">JOUR</button>
+        </div>
 
     </main>
 

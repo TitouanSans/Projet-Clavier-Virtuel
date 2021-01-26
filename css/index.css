@@ -1,4 +1,15 @@
 
+main {
+  margin-bottom: 50vh
+}
+
+#keyboard {
+    position: fixed;
+    bottom: 50px;
+    left: 20vw;
+    width: 100%;
+}
+
 p {
     margin: 0px;
 }
@@ -10,6 +21,11 @@ p {
 .active {
     color: white;
     background-color: rgb(121, 121, 121);
+}
+
+.hover {
+    background-color:rgb(229, 229, 229);
+    border: .5px solid black;
 }
 
 .letter {
@@ -54,12 +70,6 @@ p {
 .enter-btn2 {
     width: 45px;
     height: 45px;
-}
-.enter-btn:hover {
-    background-color:rgb(229, 229, 229);
-}
-.enter-btn2:hover {
-    background-color:rgb(229, 229, 229);
 }
 
 .space-btn {
