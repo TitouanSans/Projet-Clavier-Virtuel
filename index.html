@@ -12,8 +12,8 @@
     </header>
 
     <main>
-        <div id="keyboard">
-            <button onclick="clickLetter('²')" class="letter-spe"><p class="solo">²</p></button>
+        <div id="keyboard" class="flex">
+            <button onclick="clickLetter('²')" class="letter-spe">²</button>
             <button onclick="letterSpe('0')" class="letter-spe"><p>1</p><p>&</p></button>
             <button onclick="letterSpe('1')" class="letter-spe"><p>2</p><p>é ~</p></button>
             <button onclick="letterSpe('2')" class="letter-spe"><p>3</p><p>" #</p></button>
@@ -26,7 +26,7 @@
             <button onclick="letterSpe('9')" class="letter-spe"><p>0</p><p>à @</p></button>
             <button onclick="letterSpe('10')" class="letter-spe"><p>°</p><p>) ]</p></button>
             <button onclick="letterSpe('11')" class="letter-spe"><p>+</p><p>= }</p></button>
-            <button onclick="back()" class="return-btn"><p class="solo">RETOUR</p></button>
+            <button onclick="back()" class="return-btn">RETOUR</button>
         </div>
 
         <div class="flex">
@@ -76,6 +76,7 @@
             <button onclick="clickLetter('m')" class="letter">m</button>
             <button onclick="letterSpe('14')" class="letter-spe"><p>%</p><p>ù</p></button>
             <button onclick="letterSpe('15')" class="letter-spe"><p>µ</p><p>*</p></button>
+            <button id="enter" onclick="enter()" class="enter-btn2"></button>
         </div>
 
         <div class="flex">
@@ -96,9 +97,9 @@
             <button id="shift" onclick="shift()" class="shiftR">Shift</button>
         </div>
 
-        <div>
-            <button id="alt" onclick="alt()" class="alt-btn"><p>ALT</p><p>GR</p></button>
-            <button onclick="clickLetter(' ')" class="space-btn"><p class="solo">ESPACE</p></button>
+        <div class="flex">
+            <button id="alt" onclick="alt()" class="alt-btn"><p>Alt Gr</p></button>
+            <button onclick="clickLetter(' ')" class="space-btn">ESPACE</button>
         </div>
 
         <button id="qwertyBtn" onclick="qwertySwitch()">AZERTY</button>

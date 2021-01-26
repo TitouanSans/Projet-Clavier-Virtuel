@@ -280,6 +280,10 @@ function accentKeys() {
     }
 }
 
+function tab() {
+    document.getElementById("textZone").innerHTML += `&#9;`;
+}
+
 function night() {
     if (activeNight) {
         document.getElementById("mod").href = "css/day.css"

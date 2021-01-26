@@ -23,7 +23,7 @@ p {
 }
 
 .return-btn {
-    width: 90px;
+    width: 80px;
     height: 45px;
 }
 
@@ -43,8 +43,23 @@ p {
 }
 
 .shiftR {
-    width: 120px;
+    width: 115px;
     height: 45px;
+}
+
+.enter-btn {
+    width: 60px;
+    height: 45px;
+}
+.enter-btn2 {
+    width: 45px;
+    height: 45px;
+}
+.enter-btn:hover {
+    background-color:rgb(229, 229, 229);
+}
+.enter-btn2:hover {
+    background-color:rgb(229, 229, 229);
 }
 
 .space-btn {
