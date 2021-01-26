@@ -6,7 +6,6 @@ main {
 #keyboard {
     position: fixed;
     bottom: 50px;
-    left: 20vw;
     width: 100%;
 }
 
@@ -66,10 +65,14 @@ p {
 .enter-btn {
     width: 60px;
     height: 45px;
+    border: .5px solid grey;
+    border-bottom: none;
 }
 .enter-btn2 {
     width: 45px;
     height: 45px;
+    border: .5px solid grey;
+    border-top: none;
 }
 
 .space-btn {
